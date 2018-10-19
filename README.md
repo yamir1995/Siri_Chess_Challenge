@@ -1,6 +1,6 @@
 # Siri_Chess_Challenge
 
-To run the program the following steps are recommended:\
+To run the program the following steps are recommended:
 1. git clone the repository link locally
 2. cd into your main folder (Siri_Chess_Challenge)
 3. "javac src/StartProgram.java" to compile
