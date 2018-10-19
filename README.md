@@ -8,4 +8,6 @@ To run the program the following steps are recommended:
 5. You will be walked through a series of prompts that will ask you which piece you would like to test, and its starting and ending positions.
 6. The program will output whether or not the ending position is reachable from the starting position, the minimum number of turns required to reach this position, and the path taken for this traversal.
 
+(This program assumes the board is not otherwise populated with any other pieces that might obstruct its path)
+
 Enjoy!
