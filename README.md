@@ -9,7 +9,7 @@ To run the program the following steps are recommended:
 6. The program will output whether or not the ending position is reachable from the starting position, the minimum number of turns required to reach this position, and the path taken for this traversal.
 
 
-Prompts:
+Prompts:\
 a. Enter choice number (1 = King, 2 = Bishop, 3 = Knight, 4 = All)\
 b. Enter starting row (between 0 and 7)\
 c. Enter statring column (between 0 and 7)\
