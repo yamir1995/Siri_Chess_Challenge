@@ -1,5 +1,7 @@
 # Siri_Chess_Challenge
 
+[The program reads inputs from the command line with prompts and outputs to stdout]
+
 To run the program the following steps are recommended:
 1. git clone the repository link locally
 2. cd into your src folder ("cd Siri_Chess_Challenge/src")
