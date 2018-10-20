@@ -75,8 +75,8 @@ public class FindMinimumMoves {
 		Board board = new Board();
 		Knight knight = new Knight(start_row, start_col);
 		LinkedList<Knight> knights_list = new LinkedList<Knight>();
-		knight.path.add(start_row);//
-		knight.path.add(start_col);//
+		knight.path.add(start_row);
+		knight.path.add(start_col);
 		knights_list.add(knight);
 		//Setting the start position at being visited on the board object
 		board.position[start_row][start_col] = 1;
@@ -87,26 +87,28 @@ public class FindMinimumMoves {
 		while(knights_list.size() != 0) {
 			Knight current = knights_list.poll();
 			if(isAtTarget(current.current_pos, end_row, end_col)) {
-//				return current.turns;
-				return current;//
+				return current;
 			}
 			//For each knight in the list, consider all possible moves that can be made
 			for(int i = 0; i < current.move_row.length; i++) {
 				int new_row = current.current_pos[0] + current.move_row[i];
 				int new_col = current.current_pos[1] + current.move_col[i];
+				//If the move lies within the board boundary and isn't a visited position
 				if(inBoundary(new_row, new_col) && notVisited(board, new_row, new_col)) {
 					Knight new_position = new Knight(new_row, new_col);
 					new_position.turns = current.turns + 1;
-					new_position.path = new ArrayList<Integer>(current.path);//
-					new_position.path.add(new_row);//
-					new_position.path.add(new_col);//
+					//To track path taken
+					new_position.path = new ArrayList<Integer>(current.path);
+					new_position.path.add(new_row);
+					new_position.path.add(new_col);
+					//Update list of current knights positions and set current
+					//position to visited on our board
 					knights_list.add(new_position);
 					board.position[new_row][new_col] = 1;
 				}
 			}
 		}
-		//return Integer.MAX_VALUE;
-		return null;//
+		return null;
 	}
 	
 	public static Bishop startBishop(int start_row, int start_col, int end_row, int end_col) {
@@ -118,8 +120,8 @@ public class FindMinimumMoves {
 		Bishop bishop = new Bishop(start_row, start_col);
 		
 		LinkedList<Bishop> bishops_list = new LinkedList<Bishop>();
-		bishop.path.add(start_row);//
-		bishop.path.add(start_col);//
+		bishop.path.add(start_row);
+		bishop.path.add(start_col);
 		bishops_list.add(bishop);
 		board.position[start_row][start_col] = 1;
 		
@@ -142,9 +144,12 @@ public class FindMinimumMoves {
 					if(notVisited(board, new_row, new_col)) {
 						Bishop new_position = new Bishop(new_row, new_col);
 						new_position.turns = current.turns + 1;
-						new_position.path = new ArrayList<Integer>(current.path);//
-						new_position.path.add(new_row);//
-						new_position.path.add(new_col);//
+						//To track path taken
+						new_position.path = new ArrayList<Integer>(current.path);
+						new_position.path.add(new_row);
+						new_position.path.add(new_col);
+						//Update list of current knights positions and set current
+						//position to visited on our board
 						bishops_list.add(new_position);
 						board.position[new_row][new_col] = 1;
 					}
@@ -160,8 +165,8 @@ public class FindMinimumMoves {
 		King king = new King(start_row, start_col);
 
 		LinkedList<King> kings_list = new LinkedList<King>();
-		king.path.add(start_row);//
-		king.path.add(start_col);//
+		king.path.add(start_row);
+		king.path.add(start_col);
 		kings_list.add(king);
 		board.position[start_row][start_col] = 1;
 		
@@ -170,7 +175,7 @@ public class FindMinimumMoves {
 		while(kings_list.size() != 0) {
 			King current = kings_list.poll();
 			if(isAtTarget(current.current_pos, end_row, end_col)) {
-				return current;//
+				return current;
 			}
 			//For each knight in the list, consider all possible moves that can be made
 			for(int i = 0; i < current.move_row.length; i++) {
@@ -179,9 +184,12 @@ public class FindMinimumMoves {
 				if(inBoundary(new_row, new_col) && notVisited(board, new_row, new_col)) {
 					King new_position = new King(new_row, new_col);
 					new_position.turns = current.turns + 1;
-					new_position.path = new ArrayList<Integer>(current.path);//
-					new_position.path.add(new_row);//
-					new_position.path.add(new_col);//
+					//To track path taken
+					new_position.path = new ArrayList<Integer>(current.path);
+					new_position.path.add(new_row);
+					new_position.path.add(new_col);
+					//Update list of current knights positions and set current
+					//position to visited on our board
 					kings_list.add(new_position);
 					board.position[new_row][new_col] = 1;
 				}
@@ -233,6 +241,7 @@ public class FindMinimumMoves {
 	
 	//Function to print output once minimum turns have been computed
 	public static void printResult(int turns, ArrayList<Integer> path, int choice) {
+		System.out.println();
 		if(choice == 1) {
 			System.out.println("KING:");
 		}
