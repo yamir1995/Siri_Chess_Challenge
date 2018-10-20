@@ -16,7 +16,7 @@ a. Enter choice number (1 = King, 2 = Bishop, 3 = Knight, 4 = All)\
 b. Enter starting row (between 0 and 7)\
 c. Enter statring column (between 0 and 7)\
 d. Enter ending row (between 0 and 7)\
-e. Enter ending column (between 0 and 7)\
+e. Enter ending column (between 0 and 7)
 
 (This program assumes the board is not otherwise populated with any other pieces that might obstruct its path)
 
