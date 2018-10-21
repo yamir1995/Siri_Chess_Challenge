@@ -45,21 +45,21 @@ public class FindMinimumMoves {
 				printResult(final_position_king.turns, final_position_king.path, 1);
 			}
 			else {
-				printResult(Integer.MAX_VALUE, null, choice);
+				printResult(Integer.MAX_VALUE, null, 1);
 			}
 			Bishop final_position_bishop = startBishop(start_row, start_col, end_row, end_col);
 			if(final_position_bishop != null) {
 				printResult(final_position_bishop.turns, final_position_bishop.path, 2);
 			}
 			else {
-				printResult(Integer.MAX_VALUE, null, choice);
+				printResult(Integer.MAX_VALUE, null, 2);
 			}
 			Knight final_position_knight = startKnight(start_row, start_col, end_row, end_col);
 			if(final_position_knight != null) {
 				printResult(final_position_knight.turns, final_position_knight.path, 3);
 			}
 			else {
-				printResult(Integer.MAX_VALUE, null, choice);
+				printResult(Integer.MAX_VALUE, null, 3);
 			}			
 
 		}
